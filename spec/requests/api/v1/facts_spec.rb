@@ -111,13 +111,7 @@ RSpec.describe 'api/v1/facts', type: :request do
 
     delete('delete fact') do
       tags 'Facts'
-      response(204, 'successful') do
-
-        after do |example|
-          example.metadata[:response][:examples] = { 'application/json' => response }
-        end
-        run_test!
-      end
+      response :no_content, 'successful'
     end
   end
 end

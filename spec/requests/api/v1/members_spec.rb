@@ -115,14 +115,7 @@ RSpec.describe 'api/v1/members', type: :request do
 
     delete('delete member') do
       tags 'Members'
-      response(204, 'successful') do
-        let(:id) { member_id }
-
-        after do |example|
-          example.metadata[:response][:examples] = { 'application/json' => response }
-        end
-        run_test!
-      end
+      response :no_content, 'successful'
     end
   end
 end
