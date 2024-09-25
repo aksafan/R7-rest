@@ -42,7 +42,7 @@ class Api::V1::MembersController < ApplicationController
   # DELETE /members/:id
   def destroy
     if @member.destroy
-      render json: @member, status: 204
+      render json: nil, status: :no_content
     else
       render json: { error: "The member entry could not be deleted. #{@member.errors.full_messages.to_sentence}"},
              status: 400

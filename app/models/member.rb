@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
+  belongs_to :user
   has_many :facts
 
   validates :first_name, presence: true, format: { with: /\A[a-z\-' ]+\z/i }
