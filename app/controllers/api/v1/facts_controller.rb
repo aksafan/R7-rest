@@ -39,7 +39,7 @@ class Api::V1::FactsController < ApplicationController
   # DELETE /members/:member_id/facts/:id
   def destroy
     if @fact.destroy
-      render json: @fact, status: 204
+      render json: nil, status: :no_content
     else
       render json: { error: "The fact entry could not be deleted. #{@fact.errors.full_messages.to_sentence}"},
              status: 400
